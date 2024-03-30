@@ -1,0 +1,94 @@
+/* o css abaixo foi pensado para compreender todo o conteúdo de todas as páginas, por isso pode conter elementos que não necessáriamente estarão em todas as páginas*/
+
+#indexDiv { /*div encontrada apenas na página Index, criado para ser um grid responsivo para o elemento <p> contido nele*/
+    display: grid; /*transformação em grid, abaixo com as colunas e linhas desejadas*/
+    grid-template-columns: repeat(3, 1fr); 
+    grid-auto-rows: auto;
+    width: 100%; 
+    padding-top: 20px;
+    margin-bottom: 150px; /*a margin e o padding acima foram adicionados apenas para melhorar a diagramação e posicionamento na página*/
+    justify-items: center;
+    text-align: center; /*como a demarcação acima, colocado apenas para centrlizar o conteúdo*/
+}
+h1 { /*título do conteúdo da página, por isso presente em todas elas*/
+    grid-row-start: 2;
+    grid-column: 1 / span 3; /*assim como a aparição de outras disposições de grid, essa configuração apenas posiciona o elemento de forma fica*/
+    max-width:100%;
+    height: auto;
+    font-size: 4vw; /*esse e demais textos, assim como algumas medidas, vão ser dimencionadas com o uso de 'vw' por questões de responsividade*/
+    justify-self: center;
+}
+#profilePic{ /*imagem usada para ilustrar o conteúdo da página, presente em todas elas*/
+    grid-row-start: 1;
+    grid-column: 1 / span 3;
+    max-width: 15%; /*medida disposta de tal maneira para manter uma padronização entre as imagens, já que elas tem dimensoes diferentes*/
+    height: auto;
+    object-fit: cover;  /*colocado para fazer a imagem cobrir toda área do elemento img*/
+    border: white solid 1vw;
+    border-radius: 50%;
+    justify-self: center;
+}
+#indexDiv p{ /*configuração do elemento p presente apenas na página index, mas achei melhor ainda sim colocar o marcador de ID da div só para garantir */
+    grid-row-start: 3 / span auto;
+    grid-column: 1 / span 3;
+    font-size: 2vw;
+    text-align: justify;
+    text-indent: 100px;
+    padding-left: 100px;
+    padding-right: 100px;
+    padding-top: 20px; /*essas e demais disposições acima tiveram de ser especificadas pois por padrão, no outro css eu retirei padding e margin e isso estava causando uma má disposição do texto na página. Aliás todas as explicitações de padding e margin tem esse fim*/
+}
+#card { /*Id de uma DIV presente em todas as página com exceção da index, representa uma tabela onde será disposto determinador conteúdo, configurada dessa forma para reaproveitamento*/
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: repeat(5, 1fr);
+    width: 100%;
+    padding-top: 20px;
+    justify-items: center;
+    text-align: center;
+    grid-column: 1 / span 3
+}
+#card ul{ /*apesar do display de card ter sido colocado no elemento de id card, o ul é quem vai desepenpenhar o papel visual, por isso cores e dimensões são explicitadas aqui*/
+    grid-row: 1 / span 5;
+    grid-column: 2 / span 3;
+    width: 100%;
+    height: 100%;
+    background-color: #666666;
+    border-radius: 20px;
+    justify-items: center;
+    text-align: center;
+    border: #cccccc solid 15px;
+}
+#card li { /*algumas edições de posicionamento e remoção do marcador de lista (list type none) além da adequação de fonte*/
+    padding: 50px;
+    display: block;
+    list-style-type: none;
+    font-size: 2vw;
+}
+#card form { /*formatação exclusiva para o form da aba contato, aqui ele recebe quase todos os mesmo parâmetros que as determinações expostas com o marcador #card ul, já que visualmente falando desempenha papel semelhante, salvo algumas alterações*/
+    grid-row: 1 / span 5;
+    grid-column: 2 / span 3;
+    width: 100%;
+    height: 100%;
+    background-color: #666666;
+    border-radius: 20px;
+    text-align: center;
+    border: #cccccc solid 15px;
+    padding-top: 50px;
+}
+label{ /*mesma coisa que o último comentário, mas aqui ele substitui o elemento li*/
+    font-size: 2vw; 
+    margin-bottom: 10px;  
+}
+input, textarea { /* formatação expecifica do campo de digitação de mensagem, por isso precisou receber um marcador distinto.*/
+    font-size: 16px;
+    padding: 5px; 
+    margin-bottom: 15px; 
+    width: 60%; 
+    box-sizing: border-box;
+    margin-left: 50px;
+}
+input[type="submit"] { /*formatação do botão de envio, mudanças no tamanho pois ele estava muito pequeno*/
+    width: 40%;
+    height: 10%;
+}
